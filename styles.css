@@ -1,0 +1,182 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+    width: 100dvw;
+    background: #1c1f24;
+}
+
+.game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid black; */
+    height: 500px;
+    width: 50%;
+    border-radius: 15px;
+}
+
+.heroes {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.coin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.coin img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.score {
+    color: #fff;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 800;
+    user-select: none;
+}
+
+.hero {
+    position: relative;
+}
+
+.hero img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.plusNumber {
+    position: absolute;
+    font-size: 24px;
+    font-weight: 800;
+    color: white;
+    pointer-events: none;
+    user-select: none;
+    animation: move-up 2s forwards;
+}
+
+@keyframes move-up {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
+
+.fieldOne, .fieldTwo {
+    display: none;
+    flex-direction: column;
+}
+
+.cards {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.duck input, .fox input{
+    appearance:none;
+}
+
+.duck input{
+    background: url(./assets/duck_cloth_armor.jpg) no-repeat center/contain;
+    height: 300px;
+    width: 200px;
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+    filter: brightness(1.8) grayscale(1) opacity(.7); 
+}
+
+.fox input{
+    background: url(./assets/fox1.jpg) no-repeat center/contain;
+    height: 300px;
+    width: 200px;
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+    filter: brightness(1.8) grayscale(1) opacity(.7);    
+}
+
+.duck input:hover, .fox input:hover {
+    filter: brightness(1.2) grayscale(.5) opacity(.9);
+}
+
+.duck input:checked, .fox input:checked {
+    filter: none;
+    transform: perspective(500px) translateY(-5%) rotateX(25deg) translateZ(0); 
+    opacity: 0.1;
+}
+
+.duck label {
+    display: block;
+    height: 300px;
+    width: 200px;
+    background: url(./assets/duck_heavy_armor-removebg-preview.png) center/contain no-repeat;
+    position: absolute;
+    transition: all 0.5s;
+    opacity: 0;
+    z-index: -1;
+    top: 35%;
+}
+
+.fox label {
+    display: block;
+    height: 300px;
+    width: 200px;
+    background: url(./assets/fox_heavy_armor-removebg-preview.png) center/contain no-repeat;
+    position: absolute;
+    transition: all 0.5s;
+    opacity: 0;
+    z-index: -1;
+    top: 35%;
+}
+
+.duck input:checked + label, .fox input:checked + label {
+    opacity: 1;
+    z-index: 1;
+    transform: translate3d(0%, -30%, 100px);    
+}
+
+button {
+    background-color: yellow;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-size: 24px;
+    display: flex;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.menuButton {
+    height: 50px;
+    width: 100px;
+    margin: 20px auto;
+}
+
+button:hover {
+    background-color: red;
+}

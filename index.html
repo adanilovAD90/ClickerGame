@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker Test</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game">
+        <div class="heroes">
+            <div class="cards">
+                <div class="fox">
+                    <input type="radio" id="fox" name="hero" value="fox">
+                    <label for="fox"></label>
+                </div>
+                <div class="duck">
+                    <input type="radio" id="duck" name="hero" value="duck">
+                    <label for="duck"></label>
+                </div>
+            </div>            
+            <button id="button">
+                Play
+            </button>
+        </div>
+        <div class="fieldOne">
+            <button class="menuButton">Menu</button>
+            <div class="coin">
+                <img src="./assets/coin.png" alt="coin">
+                <h2 class="score" id="scoreFox">0</h2>
+            </div>
+            <div class="hero">
+                <img id="heroFox" src="./assets/fox1.jpg" alt="hero">
+            </div>
+        </div>
+        <div class="fieldTwo">
+            <button class="menuButton">Menu</button>
+            <div class="coin">
+                <img src="./assets/coin.png" alt="coin">
+                <h2 class="score" id="scoreDuck">0</h2>
+            </div>
+            <div class="hero">
+                <img id="heroDuck" src="./assets/duck_cloth_armor.jpg" alt="hero">
+            </div>
+        </div>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>
